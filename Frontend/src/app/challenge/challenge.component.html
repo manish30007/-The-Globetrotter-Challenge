@@ -1,0 +1,31 @@
+
+<div class="globetrotter-container">
+    <!-- Header Section -->
+    <header class="game-header">
+      <div class="logo">
+        <h1>The Globetrotter</h1>
+      </div>
+    </header>
+    <div class="">
+        <div class="p-3 br-5 ">
+          <div class="d-flex justify-content-center">
+            <h3>Welcome, Explorer!</h3>
+            </div>
+
+            <p>Enter a unique username to begin your adventure</p>
+            
+            <input 
+              type="text" 
+              [(ngModel)]="username" 
+              placeholder="username"
+              class="username-input">
+            
+            <button class="start-btn" (click)="saveUsername()">
+              <i class="fas fa-compass"></i> Start Exploring
+            </button>
+      
+        </div>
+    </div>
+</div>
+
+

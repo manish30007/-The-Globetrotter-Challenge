@@ -1,0 +1,138 @@
+
+<div class="globetrotter-container">
+    <!-- Header Section -->
+    <header class="game-header">
+      <div class="logo">
+        <h1>The Globetrotter</h1>
+      </div>
+
+      <div *ngIf="inviteeData" class="score-display">
+        <i class="trophy-icon fas fa-trophy"></i>
+        <span>Challenger's Score: {{inviteeData.highestScore}}</span>
+      </div>
+      
+      <div class="score-display">
+        <i class="trophy-icon fas fa-trophy"></i>
+        <span>Your Score: {{userScore}}</span>
+      </div>
+      
+      <div *ngIf="username" class="user-profile" >
+        <div class="avatar">{{username[0]}}</div>
+        <span class="username">{{username}}</span>
+      </div>
+    </header>
+  
+    <!-- Main Game Card -->
+    <div class="game-card" [class.answered]="">
+      <!-- <div class="loader" *ngIf="isLoading">
+        <div class="compass-loader"></div>
+        <p>Exploring the world...</p>
+      </div> -->
+  
+      <div *ngIf="gameSessionId && userId; else elbstart" class="game-content p-2">
+   
+        <div *ngIf="destinationData && !isLoading" class="clue-box">
+          <h3>Where in the world is this?</h3>
+          <p class="clue">{{destinationData.clues[0]}}</p>
+          <p class="clue">{{destinationData.clues[1]}}</p>
+        </div>
+        
+        <div *ngIf="destinationData && !isLoading" class="answer-options">
+  
+          <button *ngFor="let option of destinationData.answerOptions"
+        
+              class="option-btn"
+              [class.selected]="selectedOption === option"
+              [class.correct]="isAnswered  && correctAnswer === option && !isAnswerLoading "
+              [class.incorrect]="isAnswered && !isCorrect && !isAnswerLoading && selectedOption === option"
+              [disabled]="isAnswered"
+        
+            (click)="checkAnswer(option)">
+          {{option}}
+          </button>
+         
+        </div>
+        
+        <div class="feedback-area" *ngIf="isAnswered && !isAnswerLoading">
+          <div class="result-message" [class.correct]="isCorrect" [class.incorrect]="!isCorrect">
+           
+            <h3>{{isCorrect ? '🎉 Correct Answer!' : '😢 Incorrect Answer!'}}</h3>
+          </div>
+          
+          <div class="fun-fact-card">
+            <h5>Fun Fact about {{correctAnswer}}:</h5>
+            <p>{{funFact}}</p>
+          </div>
+
+          <div class="fun-fact-card mt-3">
+            <h5>Trivia about {{correctAnswer}}:</h5 >
+            <p>{{trivia}}</p>
+          </div>
+        </div>
+        
+        <div class="game-controls">
+            <!-- (click)="nextChallenge()" -->
+          <button class="next-btn"(click)="nextChallenge()">
+            <i class="fas fa-arrow-right" ></i> Next Challenge
+          </button>
+          <!-- (click)="challengeFriend()" -->
+          <button class="challenge-btn" (click)="challengeFriend()">
+            <i class="fas fa-share-alt"></i> Challenge a Friend
+          </button>
+        </div>
+      </div>
+      <ng-template #elbstart>
+
+        <div *ngIf="userId"  class="game-content p-2">
+          <button (click)="startGame()" class="start-btn" >Start New Game</button>
+        </div>
+      </ng-template>
+    </div>
+  
+    <!-- Username Modal -->
+    <div *ngIf="showUsernameModal">
+    
+        <h2>Welcome, Explorer!</h2>
+        <p>Enter your unique username to begin your adventure</p>
+        
+        <input 
+          type="text" 
+          [(ngModel)]="username" 
+          placeholder="Your explorer name"
+          class="username-input">
+        
+        <button class="start-btn" (click)="saveUsername()">
+          <i class="fas fa-compass"></i> Start Exploring
+        </button>
+
+    </div>
+  
+    <!-- Share Modal -->
+    <dialog id="showChallenge" class="dialog-box ">
+      <div class="p-3 br-5 bg-white"  >
+        <div class="d-flex justify-content-end">
+          <button class="close-btn" (click)="closeShareModal()">×</button>
+        </div>
+        <div class="d-flex justify-content-center">
+        <h3>Challenge Your Friends!</h3>
+      </div>
+        <div class="share-card">
+          <div class="share-preview">
+            <!-- <img src="../../assets/logo-globe.svg" alt="Globetrotter Challenge" class="share-logo"> -->
+            <p>Score: {{this.userScore}}</p>
+            <p class="share-tagline">Can you beat this score?</p>
+          </div>
+          
+          <div class="share-options">
+            <button class="whatsapp-btn" (click)="shareToWhatsApp()">
+              <i class="fab fa-whatsapp"></i> Share on WhatsApp
+            </button>
+            
+            <button class="copy-btn mx-2" (click)="copyLink()">
+              <i class="fas fa-copy"></i> Copy Link
+            </button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+    </div>

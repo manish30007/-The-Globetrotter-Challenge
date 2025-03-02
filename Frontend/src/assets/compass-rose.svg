@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#1A3A5F" stroke-width="1"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#1A3A5F" stroke-width="0.5"/>
+  <circle cx="50" cy="50" r="5" fill="#FF8C42"/>
+  <path d="M50,5 L50,95 M5,50 L95,50" stroke="#1A3A5F" stroke-width="1"/>
+  <path d="M20,20 L80,80 M20,80 L80,20" stroke="#1A3A5F" stroke-width="0.5"/>
+  <path d="M50,10 L53,45 L50,50 L47,45 Z" fill="#E63946"/>
+  <path d="M50,90 L53,55 L50,50 L47,55 Z" fill="#1A3A5F"/>
+  <path d="M10,50 L45,53 L50,50 L45,47 Z" fill="#1A3A5F"/>
+  <path d="M90,50 L55,53 L50,50 L55,47 Z" fill="#1A3A5F"/>
+  <text x="50" y="20" text-anchor="middle" font-family="serif" font-size="5" fill="#1A3A5F">N</text>
+  <text x="50" y="85" text-anchor="middle" font-family="serif" font-size="5" fill="#1A3A5F">S</text>
+  <text x="85" y="52" text-anchor="middle" font-family="serif" font-size="5" fill="#1A3A5F">E</text>
+  <text x="15" y="52" text-anchor="middle" font-family="serif" font-size="5" fill="#1A3A5F">W</text>
+</svg>

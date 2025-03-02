@@ -1,0 +1,133 @@
+// Variables
+$primary-blue: #1A3A5F;
+$primary-orange: #FF8C42;
+$primary-green: #2E933C;
+$accent-gold: #F9C80E;
+$light-bg: #F4F7F9;
+$error-red: #E63946;
+$success-green: #2A9D8F;
+$text-dark: #333333;
+$text-light: #FFFFFF;
+$shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 6px 16px rgba(0, 0, 0, 0.15);
+$border-radius: 12px;
+$transition-smooth: all 0.3s ease-in-out;
+
+
+.globetrotter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: $text-dark;
+    background-color: $light-bg;
+    min-height: 100vh;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+  
+      background-size: cover;
+      opacity: 0.05;
+      z-index: -1;
+    }
+  }
+  
+  // Header Styles
+  .game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: $primary-blue;
+    border-radius: $border-radius;
+    color: $text-light;
+    margin-bottom: 30px;
+    box-shadow: $shadow-medium;
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      
+      .spinning-globe {
+        height: 40px;
+        width: 40px;
+        margin-right: 12px;
+        animation: spin 20s linear infinite;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+    
+    .score-display {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px 16px;
+      border-radius: 20px;
+      
+      .trophy-icon {
+        color: $accent-gold;
+        margin-right: 8px;
+      }
+    }
+    
+    .user-profile {
+      display: flex;
+      align-items: center;
+      
+      .avatar {
+        width: 36px;
+        height: 36px;
+        background-color: $primary-orange;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        font-weight: 600;
+      }
+    }
+  }
+
+      
+  .username-input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: $border-radius;
+    border: none;
+    margin-bottom: 25px;
+    font-size: 1rem;
+  }
+
+  .start-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: $accent-gold;
+    color: $primary-blue;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    i {
+      margin-right: 8px;
+    }
+    
+    &:hover {
+      background-color: darken($accent-gold, 5%);
+    }
+  }
