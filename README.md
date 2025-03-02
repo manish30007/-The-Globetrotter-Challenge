@@ -5,7 +5,7 @@
 The Globetrotter Challenge is a full-stack web application designed using modern web technologies. It provides an interactive platform for users, leveraging a robust backend and a dynamic frontend to deliver a seamless user experience.
 
 ## Deployed on Vercel
-https://globetrotter-bhohlmvj0-manishs-projects-a05c9216.vercel.app
+https://globetrotter-6uleg3xkt-manishs-projects-a05c9216.vercel.app
 
 ## Technologies Used
 
