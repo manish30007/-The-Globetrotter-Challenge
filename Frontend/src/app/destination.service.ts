@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class DestinationService { 
  
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'the-globetrotter-challenge-git-main-manishs-projects-a05c9216.vercel.app';
 
   constructor(public http:HttpClient) {}
 
