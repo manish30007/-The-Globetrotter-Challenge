@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class DestinationService { 
  
-  private baseUrl = 'https://the-globetrotter-challenge-6z8o.vercel.app/';
+  private baseUrl = 'https://the-globetrotter-challenge-4lf3.vercel.app/';
 
   constructor(public http:HttpClient) {}
 
