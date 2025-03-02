@@ -310,7 +310,7 @@ $transition-smooth: all 0.3s ease-in-out;
           margin-right: 15px;
           
           &:hover {
-            background-color: darken($primary-green, 5%);
+            background-color: var($primary-green);
             transform: translateY(-2px);
           }
           
@@ -415,7 +415,7 @@ $transition-smooth: all 0.3s ease-in-out;
       }
       
       &:hover {
-        background-color: darken($accent-gold, 5%);
+        background-color: var($accent-gold);
       }
     }
   }

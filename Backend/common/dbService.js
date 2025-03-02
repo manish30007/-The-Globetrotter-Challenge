@@ -34,9 +34,9 @@ switch (process.env.DB_ENV) {
     break;
 
   default:
-    DB_LINK = "neo4j+s://d3f02be6.databases.neo4j.io"; 
+    DB_LINK = "neo4j+s://b4686da1.databases.neo4j.io"; 
     DB_USER = "neo4j";
-    DB_PASSWORD = "Ic1DFlh0MrwdkgmiROqdI750TmUDybLrp1Cr4t_DhjQ";
+    DB_PASSWORD = "vTlleXoEjt0XX8J4rvbRXelsVjBRMe3k6169Mg-Ogis";
 }
 
 const driver = neo4j.driver(DB_LINK, neo4j.auth.basic(DB_USER, DB_PASSWORD), {
