@@ -7,7 +7,7 @@ import {  map } from 'rxjs';
 })
 export class UserService {
 
-  private baseUrl = 'https://the-globetrotter-challenge-4lf3.vercel.app/';
+  private baseUrl = 'https://the-globetrotter-challenge-4lf3.vercel.app';
 
  account:any;
   constructor(public http:HttpClient) {

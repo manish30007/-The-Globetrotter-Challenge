@@ -25,7 +25,7 @@ export class HomeComponent  implements OnInit {
   showShareModal = false;
   inviteLink = '';
   isLoading = false;
-  userId: any ;
+  userId: any;
   trivia: any;
   correctAnswerCount: any;
   inCorrectAnswerCount: any;
@@ -35,6 +35,7 @@ correctAnswer: any;
   inviteeId: any;
   inviteeData: any;
  userData:any;
+  userName: any;
   constructor(
     private route: ActivatedRoute, private router: Router,
     private destinationService: DestinationService,
@@ -48,7 +49,7 @@ correctAnswer: any;
 
    this.userData = this.userService.getUserData();
    this.userId = this.userData?.userId;
-   this.username = this.userData?.username;
+   this.userName = this.userData?.username;
    console.log(this.userData);
     this.route.queryParams.subscribe(params => {
       this.inviteeId = params['inviteeId']; 
@@ -62,7 +63,7 @@ correctAnswer: any;
   }
 
   getInviteeData(){
-    this.userService.fetchUser(this.userId).subscribe({
+    this.userService.fetchUser(this.inviteeId).subscribe({
       next:(data:any)=>{
         this.inviteeData = data;
         console.log(this.inviteeData);
@@ -103,7 +104,7 @@ correctAnswer: any;
       console.log(data);
       this.userData = data;
       this.userId = data.userId;
-      this.username = data.username;
+      this.userName = data.username;
       this.showUsernameModal = false;
      },
      error:(error:any)=>{
